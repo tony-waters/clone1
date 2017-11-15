@@ -16,8 +16,8 @@ pipeline {
     }
     stage("Create docker image") {
         steps {
-            sh "docker build -t $registry/clone1:master ."
-            sh "docker push $registry/clone1:master"
+            sh "docker build -t bit1/clone1 ."
+            sh "docker push bit1/clone1"
         }
     }
   }
