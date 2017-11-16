@@ -1,9 +1,7 @@
 // see https://dzone.com/refcardz/declarative-pipeline-with-jenkins for examples
 
 pipeline {
-  agent {
-    label 'maven'
-  }
+  agent any
   stages {
     stage("Checkout Code") {
       steps {
