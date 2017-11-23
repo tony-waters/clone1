@@ -17,10 +17,15 @@ pipeline {
       }
     }
     stage("Create Images") {
-      sh "docker build -t registry/myproject/clone1-app ."
+      steps {
+        sh "docker build -t registry/myproject/clone1-app ."
+      }
     }
     stage("Push Images") {
-      sh "docker push registry/myproject/clone1-app"
+      steps {
+        sh "docker push registry/myproject/clone1-app"
+      }
     }
   }
 }
+
