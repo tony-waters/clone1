@@ -17,13 +17,10 @@ pipeline {
       }
     }
     stage("Create Images") {
-        steps {
-            script {
-                openshift.withCluster() {
-                    openshift.selector("bc", "clone1-build").startBuild()
-                }
-            }
-        }
+      sh "docker build -t registry/myproject/clone1-app ."
+    }
+    stage("Push Images") {
+      sh "docker push registry/myproject/clone1-app"
     }
   }
 }
