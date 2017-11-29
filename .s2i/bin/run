@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+exec java $JAVA_PARAMS -jar /opt/app-root/app.jar
